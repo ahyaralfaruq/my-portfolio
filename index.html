@@ -17,7 +17,35 @@
 
   <title>My Portfolio</title>
 </head>
-<body>
+<body class="w-100">
+
+  <div class="modal-overlay position-fixed inset-0" data-modals="modal-container">
+    <div class="d-flex my-4" style="padding-left: 17px;">
+      
+      <div class="w-100 bg-white position-relative p-2">
+        <div class="d-flex flex-row-reverse mb-3">
+          <span class="px-2 py-2 position-relative" data-modals="modal-close" style="cursor: pointer">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+
+        <div class="row mx-0 my-3" data-modals="modal-images-wrapper"></div>
+        
+        <div class="pl-3 pb-2 pt-4 pr-2">
+          <div class="mb-3">
+            <h4 class="text-darkness font-weight-bold mb-2 ff-philosopher" data-modals="modal-title"></h4>
+            <p class="text-muted ff-karla" data-modals="modal-date"></p>
+          </div>
+          <div class="position-relative">
+            <p class="mb-3" data-modals="modal-desc"></p>
+    
+            <div data-modals="modal-link"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header>
     <nav>
       <div class="bg-grayscale d-flex align-items-center justify-content-between p-2 position-relative">
@@ -46,10 +74,10 @@
     </nav>
   </header>
 
-  <main class="bg-grayed">
+  <main class="bg-grayed position-relative">
     <article id="aboutMe">
       <div class="py-2 pt-5">
-        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center" data-effect="fadeInDown">About Me</h3>
+        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center ff-karla" data-effect="fadeInDown">About Me</h3>
         <section class="row mx-4">
           <div class="col-lg-2 col-md-4 col-sm-12 col-12">
             <div class="waypoints d-flex justify-content-center p-2" data-effect="fadeInLeft">
@@ -62,13 +90,13 @@
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 col-12">
             <div>
-              <h2 class="text-darkness font-weight-bold mb-1">Muhammad Ahyar</h2>
+              <h2 class="text-darkness font-weight-bold mb-1 ff-philosopher">Muhammad Ahyar</h2>
               <div class="parent-typewriter mb-2">
-                <span class="typewriter-v2 h5 font-weight-bold"></span>
+                <span class="typewriter-v2 h5 font-weight-bold ff-karla"></span>
                 <span class="cursor">|</span>
               </div>
               <div class="typewriter-wrapper">
-                <span class="typewriter text-darkness">
+                <span class="typewriter text-darkness ff-karla">
                   Hi! Saya Muhammad Ahyar. Saya adalah seorang web programmer dari Indonesia.
                   Saya berpengalaman lebih dari 3 tahun dalam mengembangkan aplikasi berbasis web.
                   Saya memiliki keahlian dalam HTML, CSS, JavaScript, dan PHP.
@@ -84,109 +112,37 @@
     
     <article id="myPortfolio">
       <div class="py-2 pt-5">
-        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center" data-effect="fadeInDown">
+        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center ff-karla" data-effect="fadeInDown">
           My Projects
         </h3>
         <section class="mx-4">
           <div class="slider-container position-relative px-2">
             <div class="slider-wrapper pb-4">
               <div class="slider-items">
-                <div class="myCard w-100 d-flex">
+                <div class="myCard w-100 d-flex" data-modals="myModal">
                   <div class="magic-height aspect-ratio-padding-hack-4-3 position-relative w-100 overflow-hidden">
                     <div class="position-absolute top-0 left-0 overflow-hidden w-100 h-100">
-                      <!-- <img src="img/ayar.jpg" class="w-100 h-100 object-cover" /> -->
-                      <div class="w-100 h-100 bg-grayscale"></div>
+                      <img src="img/projects/project-jne-desktop.png" class="w-100 h-100 object-cover" />
+                      <!-- <div class="w-100 h-100 bg-grayscale"></div> -->
                     </div>
                   </div>
                   <div class="pl-3 pb-2 pt-4 pr-2">
                     <div class="mb-3">
-                      <h4 class="text-darkness font-weight-bold mb-2">TBS ASPI</h4>
-                      <p class="text-muted">April, 2019</p>
+                      <h4 class="text-darkness font-weight-bold mb-2 ff-philosopher">JNE Learnfest</h4>
+                      <p class="text-muted ff-karla">Februari, 2023</p>
                     </div>
                     <div class="position-relative">
-                      <div class="hide-description">
-                          Membuat web aplikasi pembayaran dengan html, css, javascript.
-
-                          <div class="py-3 w-100">
-                            <a href="#" target="_blank" class="d-block">repo</a>
-                            <a href="#" target="_blank" class="d-block">live</a>
-                          </div>
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button class="button-description">
-                          <span class="span">Description</span>
-                        </button>
-                      </div>
+                      <p class="text-ellipsis">
+                        Membuat website LMS JNE menggunakan teknologi React JS dan berbagai macam
+                        module yang dibutuhkan.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
+              
               <div class="slider-items">
-                <div class="myCard w-100 d-flex">
-                  <div class="magic-height aspect-ratio-padding-hack-4-3 position-relative w-100 overflow-hidden">
-                    <div class="position-absolute top-0 left-0 overflow-hidden w-100 h-100">
-                      <!-- <img src="img/ayar.jpg" class="w-100 h-100 object-cover" /> -->
-                      <div class="w-100 h-100 bg-grayscale"></div>
-                    </div>
-                  </div>
-                  <div class="pl-3 pb-2 pt-4 pr-2">
-                    <div class="mb-3">
-                      <h4 class="text-darkness font-weight-bold mb-2">Spot Dagang ASPI</h4>
-                      <p class="text-muted">April, 2019</p>
-                    </div>
-                    <div class="position-relative">
-                      <div class="hide-description">
-                          Membuat responsif website E-commerce dengan html, css, javascript dengan menggunakan 
-                          bootstrap.
-
-                          <div class="py-3 w-100">
-                            <a href="#" target="_blank" class="d-block">repo</a>
-                            <a href="#" target="_blank" class="d-block">live</a>
-                          </div>
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button class="button-description">
-                          <span class="span">Description</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider-items">
-                <div class="myCard w-100 d-flex">
-                  <div class="magic-height aspect-ratio-padding-hack-4-3 position-relative w-100 overflow-hidden">
-                    <div class="position-absolute top-0 left-0 overflow-hidden w-100 h-100">
-                      <!-- <img src="img/ayar.jpg" class="w-100 h-100 object-cover" /> -->
-                      <div class="w-100 h-100 bg-grayscale"></div>
-                    </div>
-                  </div>
-                  <div class="pl-3 pb-2 pt-4 pr-2">
-                    <div class="mb-3">
-                      <h4 class="text-darkness font-weight-bold mb-2">Babukung Project</h4>
-                      <p class="text-muted">Maret, 2021</p>
-                    </div>
-                    <div class="position-relative">
-                      <div class="hide-description">
-                          Membuat website E-commerce babukung festival menggunakan html, css, javascript 
-                          dan php dengan bootstrap sebagai framework css nya.
-
-                          <div class="py-3 w-100">
-                            <a href="#" target="_blank" class="d-block">repo</a>
-                            <a href="#" target="_blank" class="d-block">live</a>
-                          </div>
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button class="button-description">
-                          <span class="span">Description</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider-items">
-                <div class="myCard w-100 d-flex">
+                <div class="myCard w-100 d-flex" data-modals="myModal">
                   <div class="magic-height aspect-ratio-padding-hack-4-3 position-relative w-100 overflow-hidden">
                     <div class="position-absolute top-0 left-0 overflow-hidden w-100 h-100">
                       <img src="img/projects/fadin.png" class="w-100 h-100 object-cover" />
@@ -194,23 +150,14 @@
                   </div>
                   <div class="pl-3 pb-2 pt-4 pr-2">
                     <div class="mb-3">
-                      <h4 class="text-darkness font-weight-bold mb-2">Fadin Wedding</h4>
-                      <p class="text-muted">Juli, 2023</p>
+                      <h4 class="text-darkness font-weight-bold mb-2 ff-philosopher">Fadin Wedding</h4>
+                      <p class="text-muted ff-karla">Juli, 2023</p>
                     </div>
                     <div class="position-relative">
-                      <div class="hide-description">
-                          Membuat website wedding menggunakan HTML, CSS, Javascript.
-
-                          <div class="py-3 w-100">
-                            <a href="https://github.com/ahyaralfaruq/hajun-wedding-project" target="_blank" class="d-block">repo</a>
-                            <a href="https://ahyaralfaruq.github.io/hajun-wedding-project/" target="_blank" class="d-block">live</a>
-                          </div>
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button class="button-description">
-                          <span class="span">Description</span>
-                        </button>
-                      </div>
+                      <p class="text-ellipsis">
+                        Membuat website wedding invitation menggunakan html, css, javascript dan module
+                        bootstrap v5
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -232,7 +179,7 @@
 
     <article id="mySkills">
       <div class="py-2 pt-5">
-        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center" data-effect="fadeInDown">
+        <h3 class="waypoints text-darkness font-weight-bold mb-5 text-center ff-philosopher" data-effect="fadeInDown">
           My Skills
         </h3>
         <section class="myGrid mx-4 px-4 pb-5">
@@ -246,8 +193,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">HTML 5</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">HTML 5</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -261,8 +208,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">CSS 3</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">CSS 3</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -276,8 +223,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">PHP</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">PHP</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -291,8 +238,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Javascript</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Javascript</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -306,8 +253,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">MySQL</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">MySQL</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -321,8 +268,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">MongoDB</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">MongoDB</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -336,8 +283,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Heroku</p>
-                <p class=" text-darkness mb-1">Familiar</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Heroku</p>
+                <p class=" text-darkness mb-1 ff-karla">Familiar</p>
               </div>
             </div>
           </div>
@@ -351,8 +298,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Bootstrap</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Bootstrap</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -366,8 +313,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Tailwind</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Tailwind</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -381,8 +328,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Material UI</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Material UI</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -396,8 +343,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Git</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Git</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -411,8 +358,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Github</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Github</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -426,8 +373,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Laravel</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Laravel</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -441,8 +388,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Codeigniter</p>
-                <p class=" text-darkness mb-1">Familiar</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Codeigniter</p>
+                <p class=" text-darkness mb-1 ff-karla">Familiar</p>
               </div>
             </div>
           </div>
@@ -456,8 +403,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">JQuery</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">JQuery</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -471,8 +418,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">React</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">React</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -486,8 +433,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Redux</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Redux</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -501,8 +448,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">Express</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">Express</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -516,8 +463,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
               <div class="p-2">
-                <p class="font-weight-bold text-gray mb-1">NodeJS</p>
-                <p class=" text-darkness mb-1">Proficient</p>
+                <p class="font-weight-bold text-gray mb-1 ff-philosopher">NodeJS</p>
+                <p class=" text-darkness mb-1 ff-karla">Proficient</p>
               </div>
             </div>
           </div>
@@ -528,13 +475,13 @@
 
   <footer class="bg-grayscale" id="contactMe">
     <div class="py-3">
-      <h3 class="waypoints text-white font-weight-bold mb-5 text-center" data-effect="fadeInDown">
+      <h3 class="waypoints text-white font-weight-bold mb-5 text-center ff-philosopher" data-effect="fadeInDown">
         Contact me
       </h3>
 
       <div class="row mx-4">
         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-          <p class="text-white font-weight-bold mb-5">
+          <p class="text-white font-weight-bold mb-5 ff-karla">
             Jika Anda tertarik untuk berbicara tentang proyek atau kerjasama, 
             jangan ragu untuk menghubungi saya melalui email atau 
             melalui media sosial di bawah ini:
@@ -558,13 +505,15 @@
         </div>
 
         <!-- <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-          <div class="snowing-wrapper">
+          <div class="snowing-wrapper w-100 h-100 position-relative">
             cot
           </div>
         </div> -->
       </div>
     </div>
   </footer>
+
+  <div class="modal-backdrop-overlay" data-modals="modal-backdrop"></div>
   
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery.waypoints.js"></script>

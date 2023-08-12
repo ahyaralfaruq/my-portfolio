@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "karla";
+  src: url("../fonts/Karla/Karla-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "philosopher";
+  src: url('../fonts/Philosopher/Philosopher-Regular.ttf');
+}
 /* waypoint effect important */
 .waypoints {
   opacity: 0;
@@ -23,6 +31,13 @@
     opacity: 1;
   }
 }
+.text-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 .magic-height {
   position: relative;
@@ -34,11 +49,20 @@
 .aspect-ratio-padding-hack-16-9 {
   padding-bottom: 56.25%;
 }
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
 .aspect-ratio-padding-hack-4-3 {
   padding-bottom: 75%;
 }
+.aspect-ratio-3-4 {
+  aspect-ratio: 3/4;
+}
 .aspect-ratio-padding-hack-1-1 {
   padding-bottom: 100%;
+}
+.aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
 }
 .object-cover {
   object-fit: cover;
@@ -111,6 +135,7 @@
   overflow: hidden;
   border-radius: 9px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px 0px;
+  cursor: pointer;
 }
 .slider-navigation:not(.active) {
   display: none;
@@ -142,23 +167,6 @@
   right: 0;
   bottom: 0;
 }
-.hide-description {
-  height: 0;
-  overflow: hidden;
-  transition: all .5s ease-in-out 0s;
-}
-.hide-description.show {
-  height: 100%;
-  overflow: visible;
-}
-.button-description {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: rgba(247,247,248, 1);
-  display: flex;
-  flex-direction: row-reverse;
-}
 .myGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -177,12 +185,57 @@
 .myCardIcon:hover, .myCardIcon:focus {
   transform: translate(5px, -5px);
 }
-
-
-
+.ff-karla {
+  font-family: "karla";
+}
+.ff-philosopher {
+  font-family: "philosopher";
+}
+.inset-0 {
+  inset: 0;
+}
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: .5;
+}
+.modal-hidden {
+  overflow: hidden;
+}
+.modal-hidden .modal-overlay {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  opacity: 0;
+  transition: opacity .15s linear 0s;
+}
+.modal-backdrop-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity .15s linear 0s;
+}
+.modal-overlay.active {
+  opacity: 1;
+}
+.modal-backdrop-overlay.active {
+  opacity: .5;
+}
 
 @media (min-width: 768px) {
-
   .myGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

@@ -39,7 +39,7 @@ function acronym (value){
         }
     }
     
-    return result ? result : null
+    return result ? result : ""
 }
 
 console.log(acronym("if you know what i mean"))

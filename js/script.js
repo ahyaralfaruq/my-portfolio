@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			btn.addEventListener("click",function() {
 				if(desc[i].classList.contains("show")) {
 					desc[i].classList.remove("show")
-					btn.textContent = "Description"
+					btn.textContent = "More"
 				} else {
 					desc[i].classList.add("show")
 					btn.textContent = "Close"
@@ -214,8 +214,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		let crds = []
 		let lftrght = []
 		const browserinfos = navigator.userAgent 
-		const ie5 = document.all&&document.getElementById&&!browserinfos.match(/Opera/)
-		const ns6 = document.getElementById&&!document.all
+		// const ie5 = document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+		// const ns6 = document.getElementById&&!document.all
+		// const opera = browserinfos.match(/Opera/)  
+		// const browserok = ie5||ns6||opera
+		const ie5 = document.all&&test&&!browserinfos.match(/Opera/)
+		const ns6 = test&&!document.all
 		const opera = browserinfos.match(/Opera/)  
 		const browserok = ie5||ns6||opera
 
@@ -277,14 +281,109 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 		for(let i = 0; i <= snowmax; i++) {
-			// document.write(`<span id="s${i}" style="position: absolute; top: -${snowmaxsize}">${snowletter}</span>`)
-			test.innerHTML = `<span id="s${i}" style="position: absolute; top: -${snowmaxsize}">${snowletter}</span>`
+			document.write(`<span id="s${i}" style="position: absolute; top: -${snowmaxsize}">${snowletter}</span>`)
 		}
 
-		// if (browserok) {
-		// 	window.onload=initsnow
-		// }
-		initsnow()
+		if (browserok) {
+			window.onload=initsnow
+		}
+	}
+
+	function modalProject() {
+		const modals = document.querySelectorAll('[data-modals="myModal"]')
+		const modalContainer = document.querySelector('[data-modals="modal-container"]')
+		const modalClose = document.querySelector('[data-modals="modal-close"]')
+		const modalImagesWrapper = document.querySelector('[data-modals="modal-images-wrapper"]')
+		const modalTitle = document.querySelector('[data-modals="modal-title"]')
+		const modalDate = document.querySelector('[data-modals="modal-date"]')
+		const modalDesc = document.querySelector('[data-modals="modal-desc"]')
+		const modalLink = document.querySelector('[data-modals="modal-link"]')
+		const modalBackdrop = document.querySelector('[data-modals="modal-backdrop"]')
+		const body = document.body
+
+		const __data = [
+			{
+				images: [
+					"img/projects/project-jne-desktop.png",
+					"img/projects/project-jne-desktop.png",
+					"img/projects/project-jne-desktop.png"
+				],
+				projectTitle: "JNE Learnfest",
+				date: "Februari, 2023",
+				desc: `
+					Membuat website wedding invitation menggunakan html, css, javascript dengan sedikit tambahan
+					module bootstrap sebagai css nya dan jquery sebagai javascriptnya untuk menghandle feature yang
+					dibutuhkan.
+				`,
+				repo: "",
+				live: "",
+			},
+			{
+				images: ["img/projects/fadin.png"],
+				projectTitle: "Fadin Wedding",
+				date: "Juli, 2023",
+				desc: `
+					Membuat website wedding invitation menggunakan html, css, javascript dengan sedikit tambahan
+					module bootstrap sebagai css nya dan jquery sebagai javascriptnya untuk menghandle feature yang
+					dibutuhkan.
+				`,
+				repo: "https://github.com/ahyaralfaruq/hajun-wedding-project",
+				live: "https://ahyaralfaruq.github.io/hajun-wedding-project",
+			},
+		]
+
+		// handle close modal (bermasalah)
+		modalClose.addEventListener('click', function() {
+			body.classList.remove("modal-hidden")
+			body.style.paddingRight = ""
+			modalContainer.classList.remove("active")
+			modalBackdrop.classList.remove("active")
+
+			setTimeout(function() {
+				modalContainer.style.display = "none"
+				modalContainer.style.paddingRight = ""
+				modalBackdrop.style.display = "none"
+			}, 200)
+
+			modalImagesWrapper.innerHTML = ``
+			modalTitle.innerText = ""
+			modalDate.innerText = ""
+			modalDesc.innerText = ""
+			modalLink.innerHTML = ``
+		})
+		
+		modals.forEach(function(modal, index) {
+			modal.addEventListener('click', function() {
+				setTimeout(function() {
+					modalContainer.classList.add("active")
+					modalBackdrop.classList.add("active")
+					body.classList.add("modal-hidden")
+					body.style.paddingRight = "17px"
+				}, 200)
+
+				modalContainer.style.display = "block"
+				modalContainer.style.paddingRight = "17px"
+				modalBackdrop.style.display = "block"
+
+				__data[index].images.forEach(function(data) {
+					modalImagesWrapper.innerHTML += `
+					<div class="${__data[index].images.length === 3 ? ' col-lg-4 col-md-4' : __data[index].images.length === 2 ? ' col-lg-6 col-md-6' : ' col-lg-6 offset-lg-3 col-md-4 offset-md-3'} col-sm-12 col-12 mb-3">
+						<div class="aspect-ratio-16-9 overflow-hidden">
+							<img src="${data}" alt="gambar" class="w-100 h-100">
+						</div>
+					</div>
+					`
+				})
+				modalTitle.innerText = __data[index].projectTitle
+				modalDate.innerText = __data[index].date
+				modalDesc.innerText = __data[index].desc
+				modalLink.innerHTML = `
+				${__data[index].repo !== "" ? `<a href="${__data[index].repo}" target="_blank" class="d-block cursor-pointer mb-2">Repo</a>` : ''}
+				${__data[index].live !== "" ? `<a href="${__data[index].live}" target="_blank" class="d-block cursor-pointer mb-2">Live</a>` : ''}
+				`
+			})
+		})
+
 	}
 
 	// function waypointByFunction() {
@@ -297,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	typewriterWorker()
 	typewriterDescription()
 	toggleMenu()
-	clickSeeMoreDescription()
 	SliderCards()
 	// snowingEffect()
+	modalProject()
 })
